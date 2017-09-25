@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> Super Geocoder </title>
+  <head>
+    <link href="../static/main.css" rel="stylesheet">
+  </head>
+    <body>
+      <div class="upload">
+        <h1> Super Geocoder </h1>
+        <h3> Please upload your CSV file. The values containing address should be in a column named Address.
+        <br> The Address column should have the format: Street address, City, State (if applicable), Zip Code, Country.
+       </h3>
+        <div class="message">
+          {{text | safe}}
+        </div>
+        <form action="{{url_for('success')}}" method = "POST" enctype="multipart/form-data">
+          <!-- enctype makes sure can handle the file in flask library -->
+          <input type="file" accept=".csv" name="file"> <br>
+          <button type="submit"> Submit </button>
+        </form>
+      <div class="output">
+        {{data | safe}} <!-- jinja syntax: returns html as a string -->
+        {% include btn ignore missing%}
+      </div>
+        <!-- calls download button even though btn not created in home.html page and not created in home function in app.py -->
+      </div>
+    </body>
+</html>
