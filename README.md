@@ -1,3 +1,4 @@
+Copyright September 2017 napalerd@bu.edu
 # Super GeoCoder
 Super GeoCoder is an application that allows the user to upload
 a file with a table format that stores a list of address to the
